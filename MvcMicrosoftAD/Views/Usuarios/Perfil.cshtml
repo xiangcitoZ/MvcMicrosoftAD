@@ -1,0 +1,20 @@
+﻿@inject UserManager<IdentityUser> UserManager
+
+<img src="https://ih1.redbubble.net/image.3429415789.0516/flat,750x1000,075,f.jpg"
+     style="width: 250px; height: 250px" />
+
+
+
+    <h1 style="color:blue">
+        Bienvenido, @UserManager.GetUserName(User) Microsoft!!!
+    </h1>
+
+
+    <ul class="list-group">
+         @foreach(var claim in User.Claims)
+         {
+             <li class="list-group-item">
+                 @claim.Type: @claim.Value
+            </li>
+         }
+    </ul>
